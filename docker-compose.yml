@@ -1,0 +1,38 @@
+version: "3.9"
+services:
+  mongo:
+    image: mongo:6
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  backend:
+    build: ./apps/backend
+    environment:
+      - PORT=7777
+      - DB_CONNECTION_SECRET=mongodb://mongo:27017/devtinder
+      - JWT_SECRET=dev
+      - CORS_ORIGIN=http://localhost:5173
+      - RAZORPAY_KEY_ID=
+      - RAZORPAY_KEY_SECRET=
+      - RAZORPAY_WEBHOOK_SECRET=
+    depends_on:
+      - mongo
+    ports:
+      - "7777:7777"
+
+  frontend:
+    build: ./apps/frontend
+    environment:
+      - VITE_API_BASE_URL=/api
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+volumes:
+  mongo-data:
+
+

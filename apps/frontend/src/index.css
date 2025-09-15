@@ -1,0 +1,244 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+	height: 100%;
+}
+
+/* Custom slider styles for image cropper */
+.slider {
+	-webkit-appearance: none;
+	appearance: none;
+	height: 8px;
+	border-radius: 4px;
+	background: #e5e7eb;
+	outline: none;
+	transition: background 0.2s ease;
+}
+
+.slider:hover {
+	background: #d1d5db;
+}
+
+.slider::-webkit-slider-track {
+	-webkit-appearance: none;
+	appearance: none;
+	height: 8px;
+	border-radius: 4px;
+	background: #e5e7eb;
+}
+
+.slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	background: hsl(var(--p));
+	cursor: pointer;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	transition: all 0.2s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+	transform: scale(1.1);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.slider::-moz-range-track {
+	height: 8px;
+	border-radius: 4px;
+	background: #e5e7eb;
+	border: none;
+}
+
+.slider::-moz-range-thumb {
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	background: hsl(var(--p));
+	cursor: pointer;
+	border: none;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom shadow utilities */
+.shadow-3xl {
+	box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Smooth scrolling */
+html {
+	scroll-behavior: smooth;
+}
+
+/* Custom gradient text animation */
+@keyframes gradient-x {
+	0%,
+	100% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+}
+
+.animate-gradient-x {
+	background-size: 200% 200%;
+	animation: gradient-x 3s ease infinite;
+}
+
+/* Enhanced form focus states */
+.input:focus,
+.textarea:focus,
+.select:focus {
+	border-color: hsl(var(--p));
+	box-shadow: 0 0 0 3px hsla(var(--p), 0.1);
+	outline: none;
+}
+
+/* Improved card hover effects */
+.card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Better button transitions */
+.btn {
+	transition: all 0.2s ease;
+}
+
+.btn:hover {
+	transform: translateY(-1px);
+}
+
+.btn:active {
+	transform: translateY(1px);
+}
+
+/* Feed grid consistency */
+.grid > div {
+	display: flex;
+	flex-direction: column;
+}
+
+/* Ensure all cards have minimum height */
+.card {
+	transition: all 0.3s ease;
+}
+
+/* Skills input improvements */
+.skills-suggestions {
+	animation: fadeInDown 0.2s ease-out;
+}
+
+@keyframes fadeInDown {
+	from {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Profile card preview animations */
+.profile-preview {
+	animation: slideInLeft 0.3s ease-out;
+}
+
+@keyframes slideInLeft {
+	from {
+		opacity: 0;
+		transform: translateX(-20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+/* Badge animations */
+.badge {
+	transition: all 0.2s ease;
+}
+
+.badge:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Loading states */
+.loading-pulse {
+	animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
+}
+
+/* Navbar enhancements */
+.navbar {
+	backdrop-filter: blur(16px);
+	background: rgba(15, 23, 42, 0.8); /* Dark blue/violet background */
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Toast animations */
+.toast {
+	animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+	from {
+		opacity: 0;
+		transform: translateX(100px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+/* Avatar component improvements */
+.avatar-container {
+	position: relative;
+	display: inline-block;
+}
+
+.avatar-upload-overlay {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.7);
+	color: white;
+	border-radius: 50%;
+	padding: 4px;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.avatar-upload-overlay:hover {
+	background: rgba(0, 0, 0, 0.9);
+	transform: scale(1.1);
+}
+
+/* Line clamp utilities */
+.line-clamp-3 {
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
