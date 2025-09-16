@@ -1,13 +1,7 @@
 
 DevTinder is a modern platform for developers to **connect, collaborate, and build together**.  
 Whether you’re looking for teammates for a hackathon, contributors for your open-source project,  
-or co-founders for your next startup idea — DevTinder makes it easy to find the right people.
-*
-
-📽️ Demo Video:  
-
-https://github.com/user-attachments/assets/f741a729-1582-403e-8b6e-d13eb70b76e6
-
+or co-founders for your next startup idea — DevTinder makes it easy to find the right people
 
 <p align="center">
   <a href="#features">Features</a> •
@@ -278,13 +272,4 @@ The app supports light and dark themes using DaisyUI. Theme preference is persis
 - Max file size: 5MB
 - Automatic image optimization
 
-## 🤝 Contributing
-
-We welcome contributions! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Commit your changes: `git commit -m 'Add amazing feature'`
-4. Push to the branch: `git push origin feature/amazing-feature`
-5. Open a Pull Request
 
